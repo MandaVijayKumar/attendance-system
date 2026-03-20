@@ -13,10 +13,13 @@ Box
 import HodDailyAttendance from "./HodDailyAttendance";
 import HodAttendanceRegister from "./HodAttendanceRegister";
 import HodStudentReport from "./HodStudentReport";
+import HodChangePasswordModal from "./HodChangePasswordModal";
+import { Button } from "@mui/material";
 
 function HodDashboard(){
 
 const [tabValue,setTabValue] = useState(0);
+const [openPasswordModal, setOpenPasswordModal] = useState(false);
 
 const handleChange = (event,newValue)=>{
 setTabValue(newValue);
@@ -29,9 +32,20 @@ return(
 
 <Container maxWidth="lg" sx={{mt:4}}>
 
-<Typography variant="h4" gutterBottom>
-HOD Dashboard
-</Typography>
+<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
+
+  <Typography variant="h4">
+    HOD Dashboard
+  </Typography>
+
+  <Button
+    variant="outlined"
+    onClick={() => setOpenPasswordModal(true)}
+  >
+    🔐 Change Password
+  </Button>
+
+</Box>
 
 {/* TABS */}
 
@@ -73,7 +87,10 @@ scrollButtons="auto"
 )}
 
 </Box>
-
+<HodChangePasswordModal
+  open={openPasswordModal}
+  handleClose={() => setOpenPasswordModal(false)}
+/>
 </Container>
 </>
 

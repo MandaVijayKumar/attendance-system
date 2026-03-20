@@ -2,7 +2,7 @@ import React from "react";
 import "./ClerkSidebar.css";
 
 /* React Icons */
-import { FaUserGraduate, FaChalkboardTeacher, FaBook, FaClipboardList } from "react-icons/fa";
+import { FaUserGraduate, FaChalkboardTeacher, FaBook, FaClipboardList,FaKey } from "react-icons/fa";
 import { MdDashboard, MdViewList, MdPlaylistAdd } from "react-icons/md";
 import { AiOutlineUserAdd } from "react-icons/ai";
 
@@ -11,7 +11,7 @@ function ClerkSidebar({ setActiveTab }) {
   return (
     <div className="clerk-sidebar">
 
-      <h3 className="sidebar-title">Department Clerk</h3>
+      <h3 className="sidebar-title">Department Staff</h3>
 
       <ul className="sidebar-menu">
 
@@ -49,7 +49,10 @@ function ClerkSidebar({ setActiveTab }) {
           <MdDashboard className="menu-icon" />
           View Mappings
         </li>
-
+        <li onClick={() => setActiveTab("change-password")}>
+          <FaKey className="menu-icon" />
+          Change Password
+        </li>
         {/* <li onClick={() => setActiveTab("add-students")}>
           <MdPlaylistAdd className="menu-icon" />
           Add Students

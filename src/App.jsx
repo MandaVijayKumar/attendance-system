@@ -21,6 +21,7 @@ import PrincipalStudentHistory from "./pages/principal/tabs/PrincipalStudentHist
 import RegistrarStudentHistory from "./pages/registrar/RegistrarStudentHistory";
 import RegistrarStudents from "./pages/registrar/RegistrarStudents";
 import RegistrarFacultyReport from "./pages/registrar/RegistrarFacultyReport";
+import ChangePassword from "./pages/faculty/ChangePassword";
 
 function App() {
 
@@ -52,6 +53,12 @@ function App() {
                     element={
                         <ProtectedRoute role="Faculty">
                             <FacultyAttendanceReport />
+                        </ProtectedRoute>}
+                />
+                <Route path="/change-password"
+                    element={
+                        <ProtectedRoute role="Faculty">
+                            <ChangePassword />
                         </ProtectedRoute>}
                 />
                 <Route path="/hod-student-history"

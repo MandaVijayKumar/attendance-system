@@ -138,6 +138,12 @@ Attendance Report
 </Button>
 <Button
 color="inherit"
+onClick={()=>navigate("/change-password")}
+>
+Change Password
+</Button>
+<Button
+color="inherit"
 onClick={()=>navigate("/faculty-dashboard")}
 >
 faculty dashboard
