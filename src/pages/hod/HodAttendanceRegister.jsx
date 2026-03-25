@@ -31,7 +31,7 @@ section:"ALL"
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/courses/${dept_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/courses/${dept_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setCourses(res.data));
@@ -43,7 +43,7 @@ headers:{Authorization:`Bearer ${token}`}
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/department/${dept_id}`)
+axios.get(`https://rukap.edu.in/attendance-api/department/${dept_id}`)
 .then(res=>{
 setDeptName(res.data.dept_name);
 setCollegeName(res.data.college_name);
@@ -96,7 +96,7 @@ alert("Select filters");
 return;
 }
 
-axios.get("http://localhost:5000/hod-attendance-register",{
+axios.get("https://rukap.edu.in/attendance-api/hod-attendance-register",{
 params:filters,
 headers:{Authorization:`Bearer ${token}`}
 })

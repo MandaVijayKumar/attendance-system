@@ -28,7 +28,7 @@ function SubjectStudentMapping() {
   /* ================= LOAD COURSES ================= */
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/courses/${dept_id}`, {
+    axios.get(`https://rukap.edu.in/attendance-api/courses/${dept_id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => setCourses(res.data))
@@ -39,7 +39,7 @@ function SubjectStudentMapping() {
 
   useEffect(() => {
     if (filters.course_id && filters.course_type && filters.academic_year && filters.semester) {
-      axios.get("http://localhost:5000/subjects-filter", {
+      axios.get("https://rukap.edu.in/attendance-api/subjects-filter", {
         params: {
           course_id: filters.course_id,
           course_type: filters.course_type,
@@ -95,7 +95,7 @@ function SubjectStudentMapping() {
 
     setLoading(true);
 
-    axios.get("http://localhost:5000/students-filter", {
+    axios.get("https://rukap.edu.in/attendance-api/students-filter", {
       params: {
         course_id: filters.course_id,
         academic_year: filters.academic_year,
@@ -132,7 +132,7 @@ function SubjectStudentMapping() {
       college_id
     }));
 
-    axios.post("http://localhost:5000/map-subject-students",
+    axios.post("https://rukap.edu.in/attendance-api/map-subject-students",
       { records },
       { headers: { Authorization: `Bearer ${token}` } }
     )
@@ -153,7 +153,7 @@ function SubjectStudentMapping() {
       return;
     }
 
-    axios.get("http://localhost:5000/mapping-students-status", {
+    axios.get("https://rukap.edu.in/attendance-api/mapping-students-status", {
       params: {
         subject_id: filters.subject_id,
         course_id: filters.course_id,
@@ -170,7 +170,7 @@ function SubjectStudentMapping() {
   /* ================= ADD SINGLE STUDENT ================= */
 
   const addStudent = (student_id) => {
-    axios.post("http://localhost:5000/add-single-student-mapping", {
+    axios.post("https://rukap.edu.in/attendance-api/add-single-student-mapping", {
       subject_id: filters.subject_id,
       course_id: filters.course_id,
       semester: filters.semester,

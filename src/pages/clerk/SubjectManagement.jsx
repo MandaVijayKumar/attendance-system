@@ -72,7 +72,7 @@ setSubject(updated);
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/department/${dept_id}`)
+axios.get(`https://rukap.edu.in/attendance-api/department/${dept_id}`)
 .then(res=>{
 setCollegeId(res.data.college_id);
 })
@@ -87,7 +87,7 @@ setCollegeId(res.data.college_id);
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/courses/${dept_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/courses/${dept_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setCourses(res.data))
@@ -102,7 +102,7 @@ headers:{Authorization:`Bearer ${token}`}
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/faculty-list/${dept_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/faculty-list/${dept_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setFaculty(res.data))
@@ -117,7 +117,7 @@ headers:{Authorization:`Bearer ${token}`}
 
 const fetchSubjects = ()=>{
 
-axios.get(`http://localhost:5000/subjects/${dept_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/subjects/${dept_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setSubjects(res.data))
@@ -139,7 +139,7 @@ const handleSubmit = (e)=>{
 e.preventDefault();
 
 axios.post(
-"http://localhost:5000/register-subject",
+"https://rukap.edu.in/attendance-api/register-subject",
 {
 ...subject,
 dept_id: dept_id,
@@ -181,7 +181,7 @@ const deleteSubject = (id)=>{
 if(!window.confirm("Delete subject?")) return;
 
 axios.delete(
-`http://localhost:5000/subjects/${id}`,
+`https://rukap.edu.in/attendance-api/subjects/${id}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }

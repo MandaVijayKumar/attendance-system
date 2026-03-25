@@ -29,7 +29,7 @@ function ClerkDashboard() {
 
         if (deptId) {
             axios
-                .get(`http://localhost:5000/department/${deptId}`)
+                .get(`https://rukap.edu.in/attendance-api/department/${deptId}`)
                 .then(res => {
                     setDepartment(res.data.dept_name);
                     setLoading(false);

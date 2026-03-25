@@ -33,7 +33,7 @@ attendance_date:""
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/courses/${dept_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/courses/${dept_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setCourses(res.data))
@@ -48,7 +48,7 @@ headers:{Authorization:`Bearer ${token}`}
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/department-details/${dept_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/department-details/${dept_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>{
@@ -106,7 +106,7 @@ return;
 
 }
 
-axios.get("http://localhost:5000/hod-daily-attendance",{
+axios.get("https://rukap.edu.in/attendance-api/hod-daily-attendance",{
 params:filters,
 headers:{Authorization:`Bearer ${token}`}
 })

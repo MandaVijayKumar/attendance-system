@@ -26,7 +26,7 @@ const fetchMappings=()=>{
 setLoading(true);
 
 axios.get(
-`http://localhost:5000/subject-student-mapping/${dept_id}`,
+`https://rukap.edu.in/attendance-api/subject-student-mapping/${dept_id}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }
@@ -57,7 +57,7 @@ const viewStudents=(m)=>{
 setSelectedMapping(m);
 setStudentLoading(true);
 
-axios.get("http://localhost:5000/mapping-students",{
+axios.get("https://rukap.edu.in/attendance-api/mapping-students",{
 
 params:{
 subject_id:m.subject_id,
@@ -94,7 +94,7 @@ const deleteMapping=(m)=>{
 
 if(!window.confirm("Are you sure you want to delete this mapping?")) return;
 
-axios.delete("http://localhost:5000/delete-mapping",{
+axios.delete("https://rukap.edu.in/attendance-api/delete-mapping",{
 
 params:{
 subject_id:m.subject_id,

@@ -11,7 +11,7 @@ const [students,setStudents] = useState([]);
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/students-all`,{
+axios.get(`https://rukap.edu.in/attendance-api/students-all`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>{

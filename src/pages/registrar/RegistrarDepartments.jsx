@@ -24,7 +24,7 @@ LOAD ALL COURSES
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/courses-all`,{
+axios.get(`https://rukap.edu.in/attendance-api/courses-all`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setCourses(res.data))
@@ -43,7 +43,7 @@ const cleanParams = Object.fromEntries(
 Object.entries(filters).filter(([_,v]) => v !== "")
 );
 
-axios.get("http://localhost:5000/registrar-course-summary",{
+axios.get("https://rukap.edu.in/attendance-api/registrar-course-summary",{
 params: cleanParams,
 headers:{Authorization:`Bearer ${token}`}
 })

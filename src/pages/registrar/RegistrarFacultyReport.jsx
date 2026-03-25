@@ -31,7 +31,7 @@ useEffect(()=>{
 if(!faculty_id) return;
 
 axios.get(
-`http://localhost:5000/principal-faculty-attendance/${faculty_id}`,
+`https://rukap.edu.in/attendance-api/principal-faculty-attendance/${faculty_id}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }

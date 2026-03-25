@@ -42,7 +42,7 @@ setLoading(false);
 return;
 }
 
-axios.get(`http://localhost:5000/student-attendance-history/${student_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/student-attendance-history/${student_id}`,{
 params:{
 course_id,
 semester,

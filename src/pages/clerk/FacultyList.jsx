@@ -16,7 +16,7 @@ const dept_id = localStorage.getItem("dept_id");
 const fetchFaculty = ()=>{
 
 axios.get(
-`http://localhost:5000/faculty/${dept_id}`,
+`https://rukap.edu.in/attendance-api/faculty/${dept_id}`,
 {
 headers:{
 Authorization:`Bearer ${token}`
@@ -46,7 +46,7 @@ return;
 }
 
 axios.delete(
-`http://localhost:5000/faculty/${id}`,
+`https://rukap.edu.in/attendance-api/faculty/${id}`,
 {
 headers:{
 Authorization:`Bearer ${token}`
@@ -81,7 +81,7 @@ setEditFaculty({
 const updateFaculty = ()=>{
 
 axios.put(
-`http://localhost:5000/faculty/${editFaculty.faculty_id}`,
+`https://rukap.edu.in/attendance-api/faculty/${editFaculty.faculty_id}`,
 editFaculty,
 {
 headers:{

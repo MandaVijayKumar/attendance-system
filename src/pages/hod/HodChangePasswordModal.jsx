@@ -36,7 +36,7 @@ function HodChangePasswordModal({ open, handleClose }) {
       return;
     }
 
-    axios.post("http://localhost:5000/change-password-staff",
+    axios.post("https://rukap.edu.in/attendance-api/change-password-staff",
       {
         username,
         currentPassword: form.currentPassword,

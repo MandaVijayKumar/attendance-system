@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import Footer from "../../components/Footer";
 
 function Home() {
 
@@ -72,11 +73,7 @@ Login to Attendance System
 </main>
 
 
-<footer className="footer">
-
-© 2026 Rayalaseema University | All Rights Reserved
-
-</footer>
+<Footer/>
 
 </div>
 

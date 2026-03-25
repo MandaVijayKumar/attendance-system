@@ -30,7 +30,7 @@ absent:0
 
 useEffect(()=>{
 if(activeTab==="dashboard"){
-axios.get("http://localhost:5000/registrar-dashboard-summary",{
+axios.get("https://rukap.edu.in/attendance-api/registrar-dashboard-summary",{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setData(res.data))

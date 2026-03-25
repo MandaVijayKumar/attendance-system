@@ -38,7 +38,7 @@ section:""
 /* ================= LOAD COURSES ================= */
 
 useEffect(()=>{
-axios.get(`http://localhost:5000/courses-by-college/${college_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/courses-by-college/${college_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setCourses(res.data))
@@ -51,7 +51,7 @@ const loadData = ()=>{
 
 setLoading(true);
 
-axios.get("http://localhost:5000/principal-course-summary",{
+axios.get("https://rukap.edu.in/attendance-api/principal-course-summary",{
 params:{...filters,college_id},
 headers:{Authorization:`Bearer ${token}`}
 })

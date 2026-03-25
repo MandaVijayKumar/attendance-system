@@ -52,7 +52,7 @@ function FacultyAttendance() {
    useEffect(() => {
 
       axios.get(
-         `http://localhost:5000/faculty-subjects/${faculty_id}`,
+         `https://rukap.edu.in/attendance-api/faculty-subjects/${faculty_id}`,
          {
             headers: { Authorization: `Bearer ${token}` }
          }
@@ -76,7 +76,7 @@ function FacultyAttendance() {
       setSelectedSubject(subject);
 
       axios.get(
-         `http://localhost:5000/subject-students/${subject.subject_id}`,
+         `https://rukap.edu.in/attendance-api/subject-students/${subject.subject_id}`,
          {
             params: {
                course_id: subject.course_id,
@@ -184,7 +184,7 @@ function FacultyAttendance() {
       }));
 
       axios.post(
-         "http://localhost:5000/submit-attendance",
+         "https://rukap.edu.in/attendance-api/submit-attendance",
          { records },
          {
             headers: { Authorization: `Bearer ${token}` }
@@ -213,7 +213,7 @@ function FacultyAttendance() {
       }
 
       axios.get(
-         `http://localhost:5000/attendance/${selectedSubject.subject_id}/${period}`,
+         `https://rukap.edu.in/attendance-api/attendance/${selectedSubject.subject_id}/${period}`,
          {
             params: {
                course_id: selectedSubject.course_id,

@@ -41,7 +41,7 @@ const [sessions,setSessions] = useState([]);
 useEffect(()=>{
 
 axios.get(
-`http://localhost:5000/faculty-subjects/${faculty_id}`,
+`https://rukap.edu.in/attendance-api/faculty-subjects/${faculty_id}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }
@@ -76,7 +76,7 @@ setAcademicYear(subject.academic_year);
 const loadReport=()=>{
 
 axios.get(
-"http://localhost:5000/faculty-attendance-report",
+"https://rukap.edu.in/attendance-api/faculty-attendance-report",
 {
 params:{
 subject_id:subjectId,

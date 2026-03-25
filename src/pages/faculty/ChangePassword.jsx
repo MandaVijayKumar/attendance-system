@@ -59,7 +59,7 @@ function ChangePassword() {
       return;
     }
 
-    axios.post("http://localhost:5000/change-password",
+    axios.post("https://rukap.edu.in/attendance-api/change-password",
       {
         faculty_id,
         currentPassword: form.currentPassword,

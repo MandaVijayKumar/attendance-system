@@ -39,7 +39,7 @@ const today = new Date().toISOString().split("T")[0];
 useEffect(()=>{
 
 axios.get(
-`http://localhost:5000/faculty-subjects/${faculty_id}`,
+`https://rukap.edu.in/attendance-api/faculty-subjects/${faculty_id}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }
@@ -61,7 +61,7 @@ return;
 }
 
 axios.get(
-`http://localhost:5000/attendance/${selectedSubject.subject_id}/${period}`,
+`https://rukap.edu.in/attendance-api/attendance/${selectedSubject.subject_id}/${period}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }
@@ -134,7 +134,7 @@ status: attendance[student.student_id]
 }));
 
 axios.post(
-"http://localhost:5000/submit-attendance",
+"https://rukap.edu.in/attendance-api/submit-attendance",
 {records},
 {
 headers:{Authorization:`Bearer ${token}`}

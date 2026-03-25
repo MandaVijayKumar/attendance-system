@@ -23,13 +23,13 @@ faculty_id:""
 
 useEffect(()=>{
 
-axios.get("http://localhost:5000/colleges")
+axios.get("https://rukap.edu.in/attendance-api/colleges")
 .then(res=>setColleges(res.data));
 
-axios.get("http://localhost:5000/roles")
+axios.get("https://rukap.edu.in/attendance-api/roles")
 .then(res=>setRoles(res.data));
 
-axios.get("http://localhost:5000/faculty")
+axios.get("https://rukap.edu.in/attendance-api/faculty")
 .then(res=>setFaculty(res.data));
 
 },[]);
@@ -47,7 +47,7 @@ let updated = {...form,[name]:value};
 
 if(name === "college_id" && value){
 
-axios.get(`http://localhost:5000/departments/${value}`)
+axios.get(`https://rukap.edu.in/attendance-api/departments/${value}`)
 .then(res=>setDepartments(res.data));
 
 updated.dept_id = "";
@@ -71,7 +71,7 @@ const handleSubmit = (e)=>{
 e.preventDefault();
 
 axios.post(
-"http://localhost:5000/create-user",
+"https://rukap.edu.in/attendance-api/create-user",
 form,
 {
 headers:{Authorization:`Bearer ${token}`}

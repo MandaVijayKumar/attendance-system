@@ -31,7 +31,7 @@ semester:""
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/department/${dept_id}`)
+axios.get(`https://rukap.edu.in/attendance-api/department/${dept_id}`)
 .then(res=>{
 
 setDeptName(res.data.dept_name);
@@ -49,7 +49,7 @@ setCollegeId(res.data.college_id);
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/courses/${dept_id}`)
+axios.get(`https://rukap.edu.in/attendance-api/courses/${dept_id}`)
 .then(res=>{
 setCourses(res.data);
 });
@@ -104,7 +104,7 @@ const handleSubmit = (e)=>{
 e.preventDefault();
 
 axios.post(
-"http://localhost:5000/register-student",
+"https://rukap.edu.in/attendance-api/register-student",
 {
 ...student,
 dept_id:dept_id,

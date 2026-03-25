@@ -28,7 +28,7 @@ const [loading,setLoading] = useState(true);
 
 useEffect(()=>{
 
-axios.get("http://localhost:5000/registrar-subject-summary",{
+axios.get("https://rukap.edu.in/attendance-api/registrar-subject-summary",{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>{

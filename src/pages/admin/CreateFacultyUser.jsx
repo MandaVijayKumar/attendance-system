@@ -22,7 +22,7 @@ password:""
 useEffect(()=>{
 
 axios.get(
-"http://localhost:5000/faculty-details",
+"https://rukap.edu.in/attendance-api/faculty-details",
 {
 headers:{Authorization:`Bearer ${token}`}
 }
@@ -76,7 +76,7 @@ const handleSubmit=(e)=>{
 e.preventDefault();
 
 axios.post(
-"http://localhost:5000/create-faculty-user",
+"https://rukap.edu.in/attendance-api/create-faculty-user",
 form,
 {
 headers:{Authorization:`Bearer ${token}`}

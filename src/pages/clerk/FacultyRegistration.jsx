@@ -23,7 +23,7 @@ designation:""
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/department/${dept_id}`)
+axios.get(`https://rukap.edu.in/attendance-api/department/${dept_id}`)
 .then(res=>{
 
 setDeptName(res.data.dept_name);
@@ -54,7 +54,7 @@ const handleSubmit = (e)=>{
 e.preventDefault();
 
 axios.post(
-"http://localhost:5000/register-faculty",
+"https://rukap.edu.in/attendance-api/register-faculty",
 {
 ...faculty,
 dept_id:dept_id,

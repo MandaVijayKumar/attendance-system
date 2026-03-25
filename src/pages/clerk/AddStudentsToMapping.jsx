@@ -27,7 +27,7 @@ LOAD COURSES
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/courses/${dept_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/courses/${dept_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setCourses(res.data));
@@ -47,7 +47,7 @@ filters.semester &&
 filters.academic_year
 ){
 
-axios.get("http://localhost:5000/subjects-filter",{
+axios.get("https://rukap.edu.in/attendance-api/subjects-filter",{
 params:{
 course_id:filters.course_id,
 semester:filters.semester,
@@ -70,7 +70,7 @@ LOAD MAPPED STUDENTS
 
 const loadMappedStudents = ()=>{
 
-axios.get("http://localhost:5000/mapping-students",{
+axios.get("https://rukap.edu.in/attendance-api/mapping-students",{
 params:{
 subject_id:filters.subject_id,
 course_id:filters.course_id,
@@ -92,7 +92,7 @@ ADD NEW STUDENTS
 
 const addNewStudents = ()=>{
 
-axios.post("http://localhost:5000/add-new-students-to-mapping",{
+axios.post("https://rukap.edu.in/attendance-api/add-new-students-to-mapping",{
 
 subject_id:filters.subject_id,
 course_id:filters.course_id,

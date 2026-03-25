@@ -44,7 +44,7 @@ const [records,setRecords] = useState([]);
 
 useEffect(()=>{
 
-axios.get(`http://localhost:5000/principal-faculty-attendance/${faculty_id}`,{
+axios.get(`https://rukap.edu.in/attendance-api/principal-faculty-attendance/${faculty_id}`,{
 headers:{Authorization:`Bearer ${token}`}
 })
 .then(res=>setRecords(res.data));

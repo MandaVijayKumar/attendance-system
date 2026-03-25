@@ -30,7 +30,7 @@ const [loading,setLoading] = useState(true);
 const loadAttendance = () => {
 
 axios.get(
-`http://localhost:5000/principal-live-attendance/${college_id}`,
+`https://rukap.edu.in/attendance-api/principal-live-attendance/${college_id}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }
